@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코워카 | 조금만 기다려 주세요!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        body { font-family: 'Pretendard', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#FDFBF9] text-[#292929] min-h-screen flex items-center justify-center p-4 md:p-8">
+    <div class="max-w-2xl w-full bg-white rounded-[40px] shadow-2xl shadow-orange-100/50 overflow-hidden border border-orange-50/50 flex flex-col md:flex-row">
+        <div class="bg-[#FFF5F0] p-10 md:w-5/15 flex flex-col items-center justify-center text-center">
+            <div class="relative mb-6">
+                <div class="h-24 flex items-center justify-center overflow-hidden">
+                    <img src="cowalka_face.png" alt="코워카_얼굴" class="w-full h-full object-cover">
+                </div>     
+            </div>
+           <!--
+            <h2 class="text-xl font-bold text-[#FF7900] mb-2">코워카 cowalka</h2>
+            <p class="text-sm text-gray-500 leading-relaxed">
+                더 다정하고 꼼꼼한 코워카를 만들기 위해<br>
+                지금은 열심히 마지막 준비를 하고 있어요!
+            </p>
+            -->
+        </div>
+
+        <div class="p-8 md:p-12 md:w-7/15 flex flex-col justify-center">
+            <div class="relative w-fit mr-auto mb-2 bg-[#FF7900] text-white text-[10px] font-bold px-2 py-1 rounded-lg"> COMING SOON </div>
+            <div class="mb-8">
+                <h1 class="text-2xl md:text-3xl font-bold leading-tight mb-4">
+                    출시 알람 신청하고, <br>
+                    <span class="text-[#FF7900]">특별한 혜택</span>을 먼저 받으세요!
+                </h1>
+                <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+                    코워카에 관심을 가져주셔서 감사합니다. <br>
+                    아래 <strong>이메일</strong>을 남겨주시면 출시 직후 <br>
+                    <strong>'1개월 무료 쿠폰'</strong>을 가장 먼저 보내드릴게요.
+                </p>
+            </div>
+
+            <div class="space-y-3 mb-8">
+                <div class="bg-gray-50 rounded-2xl p-4 flex items-center gap-3 border border-gray-100">
+                    <span class="text-xl">🎁</span>
+                    <span class="text-sm font-medium text-gray-700">사전 신청자 한정 1개월 무료 이용권</span>
+                </div>
+            </div>
+
+            <form action="#" method="POST" class="space-y-3">
+                <input type="email" required 
+                    placeholder="이메일 주소를 입력해 주세요" 
+                    class="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-[#FF7900]/20 focus:border-[#FF7900] outline-none transition-all">
+                
+                <button type="submit" class="w-full bg-[#FF7900] hover:bg-[#FF7900]/90 text-white font-bold py-4 rounded-2xl shadow-lg shadow-orange-200 transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+                    신청하고 혜택 받기
+                </button>
+            </form>
+
+            <p class="mt-6 text-center text-[11px] text-gray-400">
+                개인 정보 관련 정책 2출 추가
+            </p>
+        </div>
+    </div>
+</body>
+</html>
