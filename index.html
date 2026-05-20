@@ -1332,8 +1332,11 @@
                                     <div class="w-8 h-8 rounded-full bg-quokka-500/20 flex items-center justify-center shrink-0">
                                         <iconify-icon icon="solar:smile-circle-bold" class="text-quokka-400"></iconify-icon>
                                     </div>
-                                    <p class="text-[11px] text-zinc-200 leading-tight">답장이 없네. 괜찮아?<br>위험하면 지금 바로 패닉 링을 눌러줘.<br>
-                                        <span class="text-zinc-400 mt-0.5 inline-block">코워카 • 2분 전</span></p>
+                                    <p class="text-[11px] text-zinc-200 leading-tight">
+                                        답장이 없네. 괜찮아?<br>
+                                        위험하면 지금 바로 패닉 링을<br class="block md:hidden"> 눌러줘.<br>
+                                        <span class="text-zinc-400 mt-0.5 inline-block">코워카 • 2분 전</span>
+                                    </p>
                                 </div>
 
                                 <!-- Incoming Call UI -->
@@ -1430,7 +1433,7 @@
                                 
                                 <div class="absolute inset-0 z-10 flex flex-col justify-end p-4 pb-8">
                                     <!-- Alert Banner -->
-                                    <div class="bg-red-500 rounded-xl p-3 flex items-center gap-3 mb-4 shadow-[0_0_20px_rgba(239,68,68,0.3)] mx-1">
+                                    <div class="bg-red-500 rounded-xl px-3 py-2 flex items-center gap-3 mb-4 shadow-[0_0_20px_rgba(239,68,68,0.3)] mx-1">
                                         <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center shrink-0">
                                             <iconify-icon icon="solar:check-circle-bold" class="text-white text-xl"></iconify-icon>
                                         </div>
@@ -1441,7 +1444,7 @@
                                     </div>
                                     
                                     <!-- Data List -->
-                                    <div class="bg-zinc-800/90 backdrop-blur-md rounded-xl p-3 border border-white/10 shadow-lg space-y-3 mx-1">
+                                    <div class="bg-zinc-800/90 backdrop-blur-md rounded-xl px-2 py-3 border border-white/10 shadow-lg space-y-3 mx-1">
                                         
                                         <!-- 현재 위치 정보 -->
                                         <div class="flex items-center gap-3">
@@ -1474,7 +1477,8 @@
                                             </div>
                                             <div>
                                                 <p class="text-zinc-400 text-xs mb-0.5">챗봇 대화 분석 리포트</p>
-                                                <p class="text-zinc-200 text-xs font-medium tracking-tight">이상 반응 및 위험 신호 분석</p>
+                                                <p class="text-zinc-200 text-xs font-medium tracking-tight"></p>
+                                                <!-- 이상 반응 및 위험 신호 분석 -->
                                             </div>
                                         </div>
                                         <!-- 주변 소리 녹음 -->
