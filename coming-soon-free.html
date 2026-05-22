@@ -11,37 +11,6 @@
     </style>
 </head>
     
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <script>
-        const SUPABASE_URL = 'https://qkzlqvwohjsebdijyzfu.supabase.co';
-        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFremxxdndvaGpzZWJkaWp5emZ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkyNzkwMDEsImV4cCI6MjA5NDg1NTAwMX0.YS06_RD-T_oLbqZ5FITCgQFO6TCkAFaEBdFZTWiXsAk';
-        
-        const client = supabase.createClient(
-          SUPABASE_URL,
-          SUPABASE_KEY
-        );
-        
-        const form = document.getElementById('email-form');
-        form.addEventListener('submit', async (e) => {
-            
-          e.preventDefault();
-          const email = document.getElementById('email').value;
-          const { data, error } = await client
-            .from('email_subscribers')
-            .insert([
-              { email: email }
-            ]);
-        
-          if(error) {
-            alert('오류가 발생했어요.');
-            console.log(error);
-          } else {
-            alert('신청 완료! 🎉');
-            form.reset();
-          }
-        });
-    </script>
-    
 <body class="bg-[#FDFBF9] text-[#292929] min-h-screen flex items-center justify-center p-4 md:p-8">
     <div class="max-w-2xl w-full bg-white rounded-[40px] shadow-2xl shadow-orange-100/50 overflow-hidden border border-orange-50/50 flex flex-col md:flex-row">
         <div class="bg-[#FFF5F0] p-10 md:w-5/15 flex flex-col items-center justify-center text-center">
@@ -80,7 +49,49 @@
                 </div>
             </div>
 
-            <form id="email_subscribers_free" method="POST" class="space-y-3">
+    <!-- supabse DB, SQL -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script>
+        const SUPABASE_URL = 'https://qkzlqvwohjsebdijyzfu.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFremxxdndvaGpzZWJkaWp5emZ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkyNzkwMDEsImV4cCI6MjA5NDg1NTAwMX0.YS06_RD-T_oLbqZ5FITCgQFO6TCkAFaEBdFZTWiXsAk';
+        const client = window.supabase.createClient(
+          SUPABASE_URL,
+          SUPABASE_KEY
+        );
+        const form = document.getElementById('email-form');
+        form.addEventListener('submit', async (e) => {
+            
+          e.preventDefault();
+            
+          const button = form.querySelector('button');
+          button.disabled = true;
+          button.innerText = '신청 중...';
+            
+          const email = document.getElementById('email').value;
+          const { data, error } = await client
+            .from('email_subscribers_free')
+            .insert([
+              { email: email }
+            ]);
+        
+          if(error) {
+            alert('오류가 발생했어요.');
+            console.log(error);
+
+            button.disabled = false;
+            button.innerText = '신청하고 혜택 받기';
+              
+          } else {
+            alert('신청이 완료되었어! 🎉');
+            form.reset();
+            button.innerText = '신청 완료';
+          }
+        });
+    </script>
+
+
+            
+            <form id="email-form" class="space-y-3">
                 <input type="email" id="email" required 
                     placeholder="이메일 주소를 입력해 주세요" 
                     class="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-[#FF7900]/20 focus:border-[#FF7900] outline-none transition-all">
@@ -90,7 +101,6 @@
                 </button>
             </form>
 
-            
             <p class="mt-6 text-center text-[11px] text-gray-400">
                 수집된 이메일 주소는 서비스 출시 알림 목적으로만 사용되며, <br class="block md:hidden">
                 목적 달성 후 즉시 파기됩니다. <br class="hidden md:block">
