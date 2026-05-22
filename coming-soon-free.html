@@ -48,8 +48,29 @@
                     <span class="text-sm font-medium text-gray-700">사전 신청자 한정 1개월 무료 이용권</span>
                 </div>
             </div>
+          
+            <form id="email-form" class="space-y-3">
+                <input type="email" id="email" required 
+                    placeholder="이메일 주소를 입력해 주세요" 
+                    class="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-[#FF7900]/20 focus:border-[#FF7900] outline-none transition-all">
+                
+                <button type="submit" class="w-full bg-[#FF7900] hover:bg-[#FF7900]/90 text-white font-bold py-4 rounded-2xl shadow-lg shadow-orange-200 transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+                    신청하고 혜택 받기
+                </button>
+            </form>
 
-    <!-- supabse DB, SQL -->
+            <p class="mt-6 text-center text-[11px] text-gray-400">
+                수집된 이메일 주소는 서비스 출시 알림 목적으로만 사용되며, <br class="block md:hidden">
+                목적 달성 후 즉시 파기됩니다. <br class="hidden md:block">
+                동의를 거부할 수 있으나, <br class="block md:hidden">
+                미동의 시 관련 소식을 받으실 수 없습니다.
+            </p>
+        </div>
+    </div>
+</body>
+
+
+        <!-- supabse DB, SQL -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script>
         const SUPABASE_URL = 'https://qkzlqvwohjsebdijyzfu.supabase.co';
@@ -91,26 +112,4 @@
           }
         });
     </script>
-
-
-            
-            <form id="email-form" class="space-y-3">
-                <input type="email" id="email" required 
-                    placeholder="이메일 주소를 입력해 주세요" 
-                    class="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-[#FF7900]/20 focus:border-[#FF7900] outline-none transition-all">
-                
-                <button type="submit" class="w-full bg-[#FF7900] hover:bg-[#FF7900]/90 text-white font-bold py-4 rounded-2xl shadow-lg shadow-orange-200 transition-all active:scale-[0.98] flex items-center justify-center gap-2">
-                    신청하고 혜택 받기
-                </button>
-            </form>
-
-            <p class="mt-6 text-center text-[11px] text-gray-400">
-                수집된 이메일 주소는 서비스 출시 알림 목적으로만 사용되며, <br class="block md:hidden">
-                목적 달성 후 즉시 파기됩니다. <br class="hidden md:block">
-                동의를 거부할 수 있으나, <br class="block md:hidden">
-                미동의 시 관련 소식을 받으실 수 없습니다.
-            </p>
-        </div>
-    </div>
-</body>
 </html>
