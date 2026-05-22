@@ -90,9 +90,12 @@
             
           const email = document.getElementById('email').value;
           const { data, error } = await client
-            .from('email_subscribers_free')
+            .from('email_subscribers')
             .insert([
-              { email: email }
+              { 
+                  email: email
+                  plan_type: 'free'
+              }
             ]);
         
           if(error) {
@@ -106,7 +109,7 @@
                     button.innerText = '신청하고 혜택 받기';
                   }
           } else {
-            alert('신청이 완료되었어! 🎉');
+            alert('신청이 완료되었어요! 🎉');
             form.reset();
             button.innerText = '신청 완료';
           }
