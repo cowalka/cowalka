@@ -93,11 +93,13 @@
             .from('email_subscribers')
             .insert([
               { 
-                  email: email
+                  email: email,
                   plan_type: 'free'
               }
             ]);
-        
+            // console.log(data);
+            // console.log(error);
+                
           if(error) {
                 if(error.code === '23505') {
                     alert('이미 신청된 이메일입니다.');
